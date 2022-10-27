@@ -5,25 +5,28 @@ var numbers = "0123456789";
 var specialCharacter = "!#$%&'()*+,-./:;<=>?@][^_`{|}~";
 var randomNumber = Math.floor(Math.random() * numbers.length);
 
-// var passwordLength = prompt(
-//   "Please enter the number of characters for your password."
-// );
-// var useSpecialCharacters = confirm(
-//   "Would you like to include special characters in your password?"
-// );
-// var useUpperCaseLetters = confirm(
-//   "Would you like to include upper case letters in your password?"
-// );
+var passwordLength = prompt(
+  "Please enter the number of characters for your password."
+);
+var useSpecialCharacters = confirm(
+  "Would you like to include special characters in your password?"
+);
+var useUpperCaseLetters = confirm(
+  "Would you like to include upper case letters in your password?"
+);
 
-var newPassword = [
-  upperCaseLetters,
-  lowerCaseLetters,
-  numbers,
-  specialCharacter,
-  randomNumber,
-];
+var newPassword = [lowerCaseLetters, numbers];
+
+if (upperCaseLetters) {
+  newPassword.push(upperCaseLetters);
+}
+if (useSpecialCharacters) {
+  newPassword.push(specialCharacter);
+  12;
+}
 
 var userPassword = "";
+for (var i = 0; i < passwordLength; i++) {}
 
 var generateBtn = document.querySelector("#generate");
 
