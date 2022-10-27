@@ -22,7 +22,6 @@ if (upperCaseLetters) {
 }
 if (useSpecialCharacters) {
   newPassword.push(specialCharacter);
-  12;
 }
 
 var userPassword = "";
