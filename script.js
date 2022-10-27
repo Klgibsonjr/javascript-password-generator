@@ -3,17 +3,25 @@ var upperCaseLetters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 var lowerCaseLetters = "abcdefghijklmnopqrstuvwxyz";
 var numbers = "0123456789";
 var specialCharacter = "!#$%&'()*+,-./:;<=>?@][^_`{|}~";
+var randomNumber = Math.floor(Math.random() * numbers.length);
 
-var passLength = prompt(
-  "Please enter the number of characters for your password."
-);
-var useSpecialCharacters = confirm(
-  "Would you like to include special characters in your password?"
-);
-var useUpperCaseLetters = confirm(
-  "Would you like to include upper case letters in your password?"
-);
-var randomNumber = Math.floor(Math.random() * 12);
+// var passwordLength = prompt(
+//   "Please enter the number of characters for your password."
+// );
+// var useSpecialCharacters = confirm(
+//   "Would you like to include special characters in your password?"
+// );
+// var useUpperCaseLetters = confirm(
+//   "Would you like to include upper case letters in your password?"
+// );
+
+var newPassword = [
+  upperCaseLetters,
+  lowerCaseLetters,
+  numbers,
+  specialCharacter,
+  randomNumber,
+];
 
 var userPassword = "";
 
