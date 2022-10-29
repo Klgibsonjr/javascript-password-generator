@@ -4,16 +4,18 @@ var lowerCaseLetters = "abcdefghijklmnopqrstuvwxyz";
 var numbers = "0123456789";
 var specialCharacter = "!#$%&'()*+,-./:;<=>?@][^_`{|}~";
 var setToInclude = [];
-// var randomNumber = Math.floor(Math.random() * numbers.length);
 
 // Function to generate prompts from user to add to array
 function generatePassword() {
   var passwordLength = prompt(
     "Please enter the number of characters for your password."
   );
-  if (passwordLength < 8 || passwordLength > 128)
-    alert("Password must be between 8 and 128 characters in length");
-  prompt("Please enter the number of characters for your password.");
+  while (passwordLength < 8 || passwordLength > 128) {
+    alert("Password must be between 8 and 128 characters in length.");
+    passwordLength = prompt(
+      "Please enter the number of characters for your password."
+    );
+  }
 
   var useSpecialCharacters = confirm(
     "Would you like to include special characters in your password?"
@@ -28,11 +30,9 @@ function generatePassword() {
     "Would you like to include numbers in your password?"
   );
 
-  // if (passwordLength
-
-  if (passwordLength) {
-    setToInclude.push();
-  }
+  // if (passwordLength) {
+  //   setToInclude.push();
+  // }
   if (useSpecialCharacters) {
     setToInclude.push(specialCharacter);
   }
@@ -44,14 +44,16 @@ function generatePassword() {
   }
   if (useNumbers) {
     setToInclude.push(numbers);
+  }
 
   console.log(setToInclude);
 
   var userPassword = "";
   for (var i = 0; i < passwordLength; i++) {
-    var userIndex = Math.floor(Math.random() * generatePassword.length);
-    if (userIndex == 0) {
-      userPassword += upperCaseLetters;
+    var userSelectionIndex = Math.floor(Math.random() * setToInclude.length);
+    var userSelection = setToInclude[userSelectionIndex];
+    userPassword +=
+      userSelection[Math.floor(Math.random() * userSelection.length)];
   }
 }
 
