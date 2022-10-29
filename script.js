@@ -1,11 +1,13 @@
-// String variables to build generatePassword
+// String variables to build password based off of the user's choices.
 const upperCaseLetters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 const lowerCaseLetters = "abcdefghijklmnopqrstuvwxyz";
 const numbers = "0123456789";
 const specialCharacter = "!#$%&'()*+,-./:;<=>?@][^_`{|}~";
-let setToInclude = [];
 let userPassword = "";
 let generateBtn = document.querySelector("#generate");
+
+// Empty array to store user input choices
+let userChoices = [];
 
 // Function to generate prompts from user to add to array
 function generatePassword() {
@@ -15,6 +17,7 @@ function generatePassword() {
     passwordLength = prompt("Please enter the number of characters for your password.");
   }
 
+  // Variable used to store user's password length choice.
   let userPasswordLength = passwordLength.valueOf();
 
   let useSpecialCharacters = confirm("Would you like to include special characters in your password?");
@@ -22,38 +25,31 @@ function generatePassword() {
   let useLowerCaseLetters = confirm("Would you like to include upper case letters in your password?");
   let useNumbers = confirm("Would you like to include numbers in your password?");
 
-  if (passwordLength) {
-    setToInclude.push(userPasswordLength);
-  }
+  // if (passwordLength) {
+  //   userChoices.push(userPasswordLength);
+  // }
   if (useSpecialCharacters) {
-    setToInclude.push(specialCharacter);
+    userChoices.push(specialCharacter);
   }
   if (useUpperCaseLetters) {
-    setToInclude.push(upperCaseLetters);
+    userChoices.push(upperCaseLetters);
   }
   if (useLowerCaseLetters) {
-    setToInclude.push(lowerCaseLetters);
+    userChoices.push(lowerCaseLetters);
   }
   if (useNumbers) {
-    setToInclude.push(numbers);
+    userChoices.push(numbers);
   }
 
   console.log(userPasswordLength);
 
-  // console.log(setToInclude);
-  for (let i = 0; i < userPasswordLength; i++) {
-    setToInclude += userPassword[Math.floor(Math.random() * userPassword.length)];
+  for (let i = 0; i <= passwordLength; i++) {
+    let userSelectionIndex = Math.floor(Math.random() * userChoices.length);
+    var userSelection = userChoices[userSelectionIndex];
+    userPassword += userSelection[Math.floor(Math.random() * userSelection.length)];
   }
-  // for (let i = 0; i < passwordLength; i++) {
-  //   let userSelectionIndex = Math.floor(Math.random() * setToInclude.length);
-  //   // var userSelection = setToInclude[userSelectionIndex];
-  //   userPassword += setToInclude[userSelectionIndex];
-  // }
-  // console.log(userPassword);
-  return;
+  console.log(userChoices);
 }
-
-// var generateBtn = document.querySelector("#generate");
 
 // Write password to the #password input
 function writePassword() {
