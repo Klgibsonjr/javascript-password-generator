@@ -15,13 +15,15 @@ function generatePassword() {
     passwordLength = prompt("Please enter the number of characters for your password.");
   }
 
+  let userPasswordLength = passwordLength.valueOf();
+
   let useSpecialCharacters = confirm("Would you like to include special characters in your password?");
   let useUpperCaseLetters = confirm("Would you like to include upper case letters in your password?");
   let useLowerCaseLetters = confirm("Would you like to include upper case letters in your password?");
   let useNumbers = confirm("Would you like to include numbers in your password?");
 
   if (passwordLength) {
-    setToInclude.push();
+    setToInclude.push(userPasswordLength);
   }
   if (useSpecialCharacters) {
     setToInclude.push(specialCharacter);
@@ -36,14 +38,19 @@ function generatePassword() {
     setToInclude.push(numbers);
   }
 
-  // console.log(setToInclude);
+  console.log(userPasswordLength);
 
-  for (var i = 0; i < passwordLength; i++) {
-    let userSelectionIndex = Math.floor(Math.random() * setToInclude.length);
-    // var userSelection = setToInclude[userSelectionIndex];
-    userPassword += setToInclude[userSelectionIndex];
+  // console.log(setToInclude);
+  for (let i = 0; i < userPasswordLength; i++) {
+    setToInclude += userPassword[Math.floor(Math.random() * userPassword.length)];
   }
+  // for (let i = 0; i < passwordLength; i++) {
+  //   let userSelectionIndex = Math.floor(Math.random() * setToInclude.length);
+  //   // var userSelection = setToInclude[userSelectionIndex];
+  //   userPassword += setToInclude[userSelectionIndex];
+  // }
   // console.log(userPassword);
+  return;
 }
 
 // var generateBtn = document.querySelector("#generate");
