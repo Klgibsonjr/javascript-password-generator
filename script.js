@@ -5,6 +5,7 @@ const numbers = "0123456789";
 const specialCharacter = "!#$%&'()*+,-./:;<=>?@][^_`{|}~";
 let setToInclude = [];
 let userPassword = "";
+var generateBtn = document.querySelector("#generate");
 
 // Function to generate prompts from user to add to array
 function generatePassword() {
@@ -19,9 +20,9 @@ function generatePassword() {
   var useLowerCaseLetters = confirm("Would you like to include upper case letters in your password?");
   var useNumbers = confirm("Would you like to include numbers in your password?");
 
-  // if (passwordLength) {
-  //   setToInclude.push();
-  // }
+  if (passwordLength) {
+    setToInclude.push();
+  }
   if (useSpecialCharacters) {
     setToInclude.push(specialCharacter);
   }
@@ -42,11 +43,12 @@ function generatePassword() {
     // var userSelection = setToInclude[userSelectionIndex];
     userPassword += setToInclude[userSelectionIndex];
   }
+  console.log(userPassword);
 }
 
 // console.log(userPassword);
 
-var generateBtn = document.querySelector("#generate");
+// var generateBtn = document.querySelector("#generate");
 
 // Write password to the #password input
 function writePassword() {
@@ -54,7 +56,11 @@ function writePassword() {
   var passwordText = document.querySelector("#password");
 
   passwordText.value = password;
+
+  // userPassword.textContent = password;
 }
+
+writePassword();
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
