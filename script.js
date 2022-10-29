@@ -4,7 +4,12 @@ const lowerCaseLetters = "abcdefghijklmnopqrstuvwxyz";
 const numbers = "0123456789";
 const specialCharacter = "!#$%&'()*+,-./:;<=>?@][^_`{|}~";
 let userPassword = "";
+
+// Creates the generate password button.
 let generateBtn = document.querySelector("#generate");
+
+// Generate event listener to listen for user click of the genreate password button to initiate the generatePassword function.
+generateBtn.addEventListener("click", writePassword);
 
 // Empty array to store user input choices
 let userChoices = [];
@@ -25,9 +30,6 @@ function generatePassword() {
   let useLowerCaseLetters = confirm("Would you like to include upper case letters in your password?");
   let useNumbers = confirm("Would you like to include numbers in your password?");
 
-  // if (passwordLength) {
-  //   userChoices.push(userPasswordLength);
-  // }
   if (useSpecialCharacters) {
     userChoices.push(specialCharacter);
   }
@@ -43,12 +45,17 @@ function generatePassword() {
 
   console.log(userPasswordLength);
 
+  if (userChoices.length === 0) {
+    alert("No selections were made to generate a new password. Please try again");
+    generatePassword();
+  }
+
   for (let i = 0; i <= passwordLength; i++) {
     let userSelectionIndex = Math.floor(Math.random() * userChoices.length);
-    var userSelection = userChoices[userSelectionIndex];
+    let userSelection = userChoices[userSelectionIndex];
     userPassword += userSelection[Math.floor(Math.random() * userSelection.length)];
   }
-  console.log(userChoices);
+  console.log(userPassword);
 }
 
 // Write password to the #password input
@@ -57,9 +64,4 @@ function writePassword() {
   let passwordText = document.querySelector("#password");
 
   passwordText.value = password;
-
-  // userPassword.textContent = password;
 }
-
-// Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
