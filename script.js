@@ -5,20 +5,20 @@ const numbers = "0123456789";
 const specialCharacter = "!#$%&'()*+,-./:;<=>?@][^_`{|}~";
 let setToInclude = [];
 let userPassword = "";
-var generateBtn = document.querySelector("#generate");
+let generateBtn = document.querySelector("#generate");
 
 // Function to generate prompts from user to add to array
 function generatePassword() {
-  var passwordLength = prompt("Please enter the number of characters for your password.");
+  let passwordLength = prompt("Please enter the number of characters for your password.");
   while (passwordLength < 8 || passwordLength > 128) {
     alert("Password must be between 8 and 128 characters in length.");
     passwordLength = prompt("Please enter the number of characters for your password.");
   }
 
-  var useSpecialCharacters = confirm("Would you like to include special characters in your password?");
-  var useUpperCaseLetters = confirm("Would you like to include upper case letters in your password?");
-  var useLowerCaseLetters = confirm("Would you like to include upper case letters in your password?");
-  var useNumbers = confirm("Would you like to include numbers in your password?");
+  let useSpecialCharacters = confirm("Would you like to include special characters in your password?");
+  let useUpperCaseLetters = confirm("Would you like to include upper case letters in your password?");
+  let useLowerCaseLetters = confirm("Would you like to include upper case letters in your password?");
+  let useNumbers = confirm("Would you like to include numbers in your password?");
 
   if (passwordLength) {
     setToInclude.push();
@@ -36,31 +36,27 @@ function generatePassword() {
     setToInclude.push(numbers);
   }
 
-  console.log(setToInclude);
+  // console.log(setToInclude);
 
   for (var i = 0; i < passwordLength; i++) {
-    var userSelectionIndex = Math.floor(Math.random() * setToInclude.length);
+    let userSelectionIndex = Math.floor(Math.random() * setToInclude.length);
     // var userSelection = setToInclude[userSelectionIndex];
     userPassword += setToInclude[userSelectionIndex];
   }
-  console.log(userPassword);
+  // console.log(userPassword);
 }
-
-// console.log(userPassword);
 
 // var generateBtn = document.querySelector("#generate");
 
 // Write password to the #password input
 function writePassword() {
-  var password = generatePassword();
-  var passwordText = document.querySelector("#password");
+  let password = generatePassword();
+  let passwordText = document.querySelector("#password");
 
   passwordText.value = password;
 
   // userPassword.textContent = password;
 }
-
-writePassword();
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
