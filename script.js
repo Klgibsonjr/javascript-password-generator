@@ -8,9 +8,6 @@ let userPassword = "";
 // Creates the generate password button.
 let generateBtn = document.querySelector("#generate");
 
-// Generate event listener to listen for user click of the genreate password button to initiate the generatePassword function.
-// generateBtn.addEventListener("click", writePassword);
-
 // Empty array to store user input choices
 let userChoices = [];
 
@@ -69,4 +66,5 @@ function writePassword() {
   generatePassword();
   let passwordText = document.querySelector("#password");
   passwordText.value = userPassword;
+  alert("Your password has been generated: " + passwordText.value);
 }
