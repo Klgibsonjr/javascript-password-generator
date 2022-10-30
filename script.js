@@ -9,7 +9,7 @@ let userPassword = "";
 let generateBtn = document.querySelector("#generate");
 
 // Generate event listener to listen for user click of the genreate password button to initiate the generatePassword function.
-generateBtn.addEventListener("click", writePassword);
+// generateBtn.addEventListener("click", writePassword);
 
 // Empty array to store user input choices
 let userChoices = [];
@@ -58,10 +58,12 @@ function generatePassword() {
   console.log(userPassword);
 }
 
+// Generate event listener to listen for user click of the genreate password button to initiate the generatePassword function.
+generateBtn.addEventListener("click", writePassword);
+
 // Write password to the #password input
 function writePassword() {
-  let password = generatePassword();
+  generatePassword();
   let passwordText = document.querySelector("#password");
-
-  passwordText.value = password;
+  passwordText.value = userPassword;
 }
