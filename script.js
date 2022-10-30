@@ -58,7 +58,7 @@ function generatePassword() {
   console.log(userPassword);
 }
 
-// Generate event listener to listen for user click of the genreate password button to initiate the generatePassword function.
+// Generate event listener to listen for user click of the generate password button to initiate the generatePassword function.
 generateBtn.addEventListener("click", writePassword);
 
 // Write password to the #password input
