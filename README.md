@@ -22,3 +22,11 @@ JavaScript features used for this project:
 Below is a image of a newly generated password. For this particular password. The user chose a 10 character password with uppercase letters, lowercase letters, numbers and special characters.
 
 ![Newly Generated Password](/assets/images/passgen1.png)
+
+Below is another image of a newly generated password with a different user choice showing that the password is working properly.
+
+![Newly Generated Password](/assets/images/passgen2.png)
+
+---
+
+I've provided a link below so you can create your newly randomly generated password for securing your accounts!
