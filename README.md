@@ -30,3 +30,9 @@ Below is another image of a newly generated password with a different user choic
 ---
 
 I've provided a link below so you can create your newly randomly generated password for securing your accounts!
+
+<div align="center">
+
+[JavaScript Password Generator](https://klgibsonjr.github.io/javascript-password-generator/ "JavaScript Password Generator")
+
+</div>
