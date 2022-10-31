@@ -19,9 +19,6 @@ function generatePassword() {
     passwordLength = prompt("Please enter the number of characters for your password.");
   }
 
-  // Variable used to store user's password length choice. Testing purposes only.
-  let userPasswordLength = passwordLength.valueOf();
-
   let useSpecialCharacters = confirm("Would you like to include special characters in your password?");
   let useUpperCaseLetters = confirm("Would you like to include upper case letters in your password?");
   let useLowerCaseLetters = confirm("Would you like to include upper case letters in your password?");
@@ -40,9 +37,6 @@ function generatePassword() {
     userChoices.push(numbers);
   }
 
-  // Used to test if a password length is being set.
-  console.log(userPasswordLength);
-
   if (userChoices.length === 0) {
     alert("No selections were made to generate a new password. Please try again");
     generatePassword();
@@ -53,9 +47,6 @@ function generatePassword() {
     let userSelection = userChoices[userSelectionIndex];
     userPassword += userSelection[Math.floor(Math.random() * userSelection.length)];
   }
-
-  // Used to log if a new password is being generated.
-  console.log(userPassword);
 }
 
 // Generate event listener to listen for user click of the generate password button to initiate the generatePassword function.
