@@ -4,7 +4,7 @@
 
 ### Desciption
 
-The purpose of this project was to utilize various JavaScript features to create a password generator.
+The purpose of this project was to utilize various JavaScript features; like event listeners, accessing DOM elements and conditional statements to create a random password generator.
 
 JavaScript features used for this project:
 
@@ -14,3 +14,11 @@ JavaScript features used for this project:
 > - Using a for loop that actually generates the password after the user choices have been chosen and stored.
 > - Utilized the DOM web API to incorporate a button the user can click to start the password generation process.
 > - Generator an event listener to listen for the user to click the generate password butto to initiate the generatePassword function.
+
+---
+
+---
+
+Below is a image of a newly generated password. For this particular password. The user chose a 10 character password with uppercase letters, lowercase letters, numbers and special characters.
+
+![Newly Generated Password](/assets/images/passgen1.png)
