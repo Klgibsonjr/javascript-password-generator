@@ -23,7 +23,7 @@ Below is a image of a newly generated password. For this particular password. Th
 
 ![Newly Generated Password](/assets/images/passgen1.png)
 
-Below is another image of a newly generated password with a different user choice showing that the password is working properly.
+Below is another image of a newly generated password with a different user choice showing that the password generator is working properly.
 
 ![Newly Generated Password](/assets/images/passgen2.png)
 
